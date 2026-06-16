@@ -1,25 +1,22 @@
 // ============================================================
-// 摄影作品数据 — 把 src 换成你自己的图片路径（或 CDN 链接）即可
-// category: landscape | portrait | street | still
+// Photo data — replace `src` with your own image paths/URLs.
+// category: landscape | people
 // ============================================================
 const photos = [
-  { src: "https://picsum.photos/id/1015/1200/1500", title: "山涧晨雾",     cat: "landscape" },
-  { src: "https://picsum.photos/id/1027/1200/1500", title: "她的侧脸",     cat: "portrait"  },
-  { src: "https://picsum.photos/id/1043/1200/1500", title: "巷口的猫",     cat: "street"    },
-  { src: "https://picsum.photos/id/1080/1200/1500", title: "桌上的莓果",   cat: "still"     },
-  { src: "https://picsum.photos/id/1019/1200/1500", title: "湖与雪",       cat: "landscape" },
-  { src: "https://picsum.photos/id/64/1200/1500",   title: "工作室即兴",   cat: "portrait"  },
-  { src: "https://picsum.photos/id/1059/1600/900",  title: "海岸线",       cat: "landscape" },
-  { src: "https://picsum.photos/id/177/1200/1500",  title: "黄昏散步",     cat: "street"    },
-  { src: "https://picsum.photos/id/225/1200/1500",  title: "茶与光",       cat: "still"     },
-  { src: "https://picsum.photos/id/1062/1200/1500", title: "雾中老城",     cat: "landscape" },
-  { src: "https://picsum.photos/id/823/1200/1500",  title: "无声的午后",   cat: "portrait"  },
-  { src: "https://picsum.photos/id/1011/1200/1500", title: "雨后的窗",     cat: "still"     },
-  { src: "https://picsum.photos/id/325/1200/1500",  title: "地铁里",       cat: "street"    },
-  { src: "https://picsum.photos/id/249/1200/1500",  title: "森林路口",     cat: "landscape" },
+  { src: "https://picsum.photos/id/1015/1200/1500", title: "Morning Mist",      cat: "landscape" },
+  { src: "https://picsum.photos/id/1027/1200/1500", title: "Her Profile",       cat: "people"    },
+  { src: "https://picsum.photos/id/1043/1200/1500", title: "Cat at the Corner", cat: "people"    },
+  { src: "https://picsum.photos/id/1019/1200/1500", title: "Lake and Snow",     cat: "landscape" },
+  { src: "https://picsum.photos/id/64/1200/1500",   title: "Studio Light",      cat: "people"    },
+  { src: "https://picsum.photos/id/1059/1600/900",  title: "Coastline",         cat: "landscape" },
+  { src: "https://picsum.photos/id/177/1200/1500",  title: "Evening Walk",      cat: "people"    },
+  { src: "https://picsum.photos/id/1062/1200/1500", title: "Foggy Town",        cat: "landscape" },
+  { src: "https://picsum.photos/id/823/1200/1500",  title: "Quiet Afternoon",   cat: "people"    },
+  { src: "https://picsum.photos/id/325/1200/1500",  title: "Subway",            cat: "people"    },
+  { src: "https://picsum.photos/id/249/1200/1500",  title: "Forest Path",       cat: "landscape" },
 ];
 
-// ---------- 渲染网格 ----------
+// ---------- Render grid ----------
 const grid = document.getElementById("grid");
 photos.forEach((p, i) => {
   const fig = document.createElement("figure");
@@ -32,7 +29,7 @@ photos.forEach((p, i) => {
   grid.appendChild(fig);
 });
 
-// ---------- 分类筛选 ----------
+// ---------- Filter ----------
 const filters = document.querySelectorAll(".filter");
 filters.forEach(btn => {
   btn.addEventListener("click", () => {
@@ -65,7 +62,6 @@ function closeLightbox() {
   lb.setAttribute("aria-hidden", "true");
 }
 function step(delta) {
-  // 仅在当前可见的图片间循环
   const visible = [...document.querySelectorAll(".grid figure:not(.hidden)")]
     .map(f => parseInt(f.dataset.idx, 10));
   if (!visible.length) return;
