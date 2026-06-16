@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>张三 · 摄影作品集</title>
+  <meta name="description" content="一名独立摄影师的个人作品集 — 风光、人像、街头与静物。" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="nav">
+    <a href="#top" class="brand">ZHANG · 张三</a>
+    <nav>
+      <a href="#gallery">作品</a>
+      <a href="#about">关于</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="hero">
+    <div class="hero-inner">
+      <h1>用光与影<br />讲一个安静的故事</h1>
+      <p>独立摄影师 · 现居上海 · 自然光偏执狂</p>
+      <a class="cta" href="#gallery">查看作品 ↓</a>
+    </div>
+  </section>
+
+  <!-- 作品集 -->
+  <section id="gallery" class="gallery-section">
+    <div class="section-head">
+      <h2>作品集</h2>
+      <div class="filters">
+        <button class="filter active" data-filter="all">全部</button>
+        <button class="filter" data-filter="landscape">风光</button>
+        <button class="filter" data-filter="portrait">人像</button>
+        <button class="filter" data-filter="street">街拍</button>
+        <button class="filter" data-filter="still">静物</button>
+      </div>
+    </div>
+
+    <div class="grid" id="grid">
+      <!-- 图片由 JS 注入；如想手写，每个 figure 加 data-cat 即可 -->
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about" class="about">
+    <div class="about-inner">
+      <img src="https://picsum.photos/id/64/600/600" alt="摄影师肖像" />
+      <div>
+        <h2>关于我</h2>
+        <p>
+          张三，2015 年开始摄影，常年游走在江浙沪一带的小巷与山野之间。
+          相信好照片来自耐心 — 等一束光、等一阵风、等一个对的人路过。
+        </p>
+        <p>常用器材：Sony A7IV · Leica Q3 · 35mm 与 50mm 定焦各一。</p>
+        <ul class="badges">
+          <li>National Geographic 摄影大赛 入围 · 2022</li>
+          <li>个人展览《街角的光》· 2023 · 上海 M50</li>
+          <li>合作客户：MUJI / Aesop / 单向空间</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section id="contact" class="contact">
+    <h2>聊聊？</h2>
+    <p>商业拍摄、约片、画廊合作，都欢迎来信。</p>
+    <div class="links">
+      <a href="mailto:hello@example.com">hello@example.com</a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener">小红书</a>
+      <a href="https://weibo.com/" target="_blank" rel="noopener">微博</a>
+    </div>
+  </section>
+
+  <footer>
+    <small>© 2026 张三. 保留所有权利. Built with ❤ & 35mm.</small>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="关闭">×</button>
+    <button class="lb-prev" aria-label="上一张">‹</button>
+    <img id="lb-img" alt="" />
+    <button class="lb-next" aria-label="下一张">›</button>
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
